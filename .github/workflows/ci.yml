@@ -1,0 +1,31 @@
+name: CI - Ejecutar y validar aplicación
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  ejecutar:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Clonar repositorio
+      uses: actions/checkout@v3
+
+    - name: Configurar Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Instalar dependencias
+      run: |
+        pip install flake8
+
+    - name: Verificar estilo de código
+      run: |
+        flake8 estudiantes registro.py main.py || true
+
+    - name: Ejecutar programa
+      run: |
+        python main.py
+
