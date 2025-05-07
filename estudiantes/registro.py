@@ -28,3 +28,15 @@ def mostrarEstudiantes(estudiantes):
 
     for est in estudiantesOrdenados:
         print(f"{est['nombre']:<15} {est['nota']:>5.2f}") 
+
+def calcularPromedio(estudiantes):
+    if not estudiantes:
+        print("No hay estudiantes para calcular el promedio.")
+        return
+
+    sumaNotas=sum(e['nota'] for e in estudiantes)
+    promedio=sumaNotas/len(estudiantes)
+    print(f"\nPromedio general de notas: {promedio:.2f}")
+
+
+
