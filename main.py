@@ -12,3 +12,4 @@ if __name__=="__main__":
     estudiantes=cargarEstudiantes("Estudiantes.csv")
     mostrarEstudiantes(estudiantes)
     calcularPromedio(estudiantes)
+print("inicio de programa")
