@@ -18,4 +18,13 @@ def cargarEstudiantes(rutaArchivo):
 
     return estudiantesValidos
 
- 
+def mostrarEstudiantes(estudiantes):
+    estudiantesOrdenados=sorted(estudiantes, key=lambda e: e['nombre'])
+
+    print("\nEstudiantes")
+    print("-" * 25)
+    print(f"{'Nombre':<15} {'Nota':>5}")
+    print("-" * 25)
+
+    for est in estudiantesOrdenados:
+        print(f"{est['nombre']:<15} {est['nota']:>5.2f}") 
